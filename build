@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Pull down our base ubuntu image.
+sudo darch images pull godarch/ubuntu:cosmic
+
+# Build our recipes.
+sudo darch recipes build $(sudo darch recipes build-dep custom)
+
+# Stage them for booting.
+sudo darch stage upload custom --force

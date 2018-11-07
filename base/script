@@ -1,5 +1,6 @@
 #!/bin/bash
-. ../common
+set -e
+export DEBIAN_FRONTEND=noninteractive
 
 # Add the official Ubuntu repositories.
 add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ cosmic main restricted"
